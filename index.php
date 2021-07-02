@@ -1,6 +1,6 @@
 <?php
 
-$BASE_URL = 'http://localhost/no-code/';
+$BASE_URL = 'http://localhost:8000/';
 function base_url ($append) {
     return rtrim($GLOBALS['BASE_URL'], '/') . '/' . ltrim($append, '/');
 }
