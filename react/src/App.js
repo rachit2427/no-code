@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import smoothScroll from 'smoothscroll-polyfill'
+import $ from 'jquery'
 
 import CheckmarkSVG from '@no-code/common/components/CheckmarkSVG'
 import Header from '@no-code/header/Header'
@@ -16,6 +17,11 @@ import Footer from '@no-code/footer/Footer'
 const App = () => {
     useEffect(() => {
         smoothScroll.polyfill()
+
+        /* Removing WebHostApp branding */
+        setTimeout(() => {
+            $("img[alt='www.000webhost.com']").parent().parent().remove()
+        }, 0)
     }, [])
 
     return (
