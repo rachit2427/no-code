@@ -13,19 +13,11 @@ module.exports = {
     watchOptions: {
         ignored: /[\\/]node_modules[\\/]/,
     },
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'pure-react-vendor',
-                    chunks: 'all',
-                },
-            },
-        },
-    },
     resolve: {
         extensions: ['.js', '.jsx'],
+        alias: {
+            '@no-code': path.resolve(__dirname, './react/src'),
+        },
     },
     module: {
         rules: [
@@ -33,7 +25,7 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
-            }
+            },
         ],
     },
     devtool: 'inline-source-map',

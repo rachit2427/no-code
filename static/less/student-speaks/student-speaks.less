@@ -1,0 +1,31 @@
+.student-speaks {
+    background-color: rgba(232, 232, 232, .24);
+
+    .section-heading {
+        span {
+            .text-gradient()
+        }
+    }
+
+    .testimonials-container {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        .testimonials-wrapper {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 33.3333%;
+            padding: 1rem;
+
+            @media @xl {
+                width: 50%;
+            }
+
+            @media @md {
+                width: 100%;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,181 @@
+.main-section {
+background-color: @bg-blue;
+
+    .heading {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-top: 0;
+
+        @media @sm {
+            font-size: 2rem;
+        }
+
+        .gradient-text {
+            .text-gradient();
+        }
+    }
+
+    .sub-heading {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-top: 0.5rem;
+
+        @media @sm {
+            font-size: 1.5rem;
+        }
+
+        .gradient-text {
+            .text-gradient();
+        }
+    }
+
+    .intro-grid-container {
+        margin-top: 3rem;
+        display: grid;
+        grid-gap: 1rem 1rem;
+        grid-template-columns: 1.2fr 1.2fr 0 1fr 1fr;
+        grid-template-rows: 1.25fr 2fr 0fr auto;
+        grid-template-areas:
+            'live-sessions hands-on-experience empty video-container video-container'
+            'our-students our-students empty video-container video-container'
+            'emptyRow emptyRow emptyRow emptyRow emptyRow'
+            'register-container register-container register-container register-container register-container';
+
+        @media @xxl {
+            grid-template-rows: .5fr 1.5fr 0fr auto;
+        }
+
+        @media @xl {
+            grid-template-rows: .5fr 1fr 0fr auto;
+        }
+
+        @media @lg {
+            grid-template-rows: auto auto auto auto;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                'live-sessions hands-on-experience'
+                'our-students our-students'
+                'video-container video-container'
+                'register-container register-container';
+        }
+
+        @media @sm {
+            grid-template-areas:
+                'video-container video-container'
+                'register-container register-container'
+                'live-sessions hands-on-experience'
+                'our-students our-students';
+
+        }
+
+        @media @xs {
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-columns: auto;
+            grid-template-areas:
+                'video-container'
+                'register-container'
+                'live-sessions'
+                'hands-on-experience'
+                'our-students';
+        }
+
+        .intro-grid-item() {
+            border-radius: 4px;
+            background-color: @theme-blue;
+        }
+
+        .grid-item-small () {
+            display: flex;
+
+            .icon-container {
+                display: flex;
+                flex-shrink: 0;
+                align-items: center;
+                justify-content: center;
+                flex-basis: 50px;
+                padding: 0.625rem;
+                color: @gradient-green;
+            }
+
+            .content-container {
+                color: @white;
+                padding: 1.625rem;
+                padding-left: 1rem;
+
+                .title {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                .description {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        .live-sessions {
+            .intro-grid-item();
+            .grid-item-small();
+            grid-area: live-sessions;
+        }
+
+        .hands-on-experience {
+            .intro-grid-item();
+            .grid-item-small();
+            grid-area: hands-on-experience;
+        }
+
+        .our-students {
+            .intro-grid-item();
+            grid-area: our-students;
+
+            .title {
+                color: @white;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .company-grid-container {
+                display: flex;
+                flex-wrap: wrap;
+
+                .company-grid-item {
+                    width: 33%;
+                    box-sizing: border-box;
+                    color: @white;
+                    padding: 1rem;
+                    height: 60px;
+                }
+            }
+        }
+
+        .video-container {
+            grid-area: video-container;
+            padding: 0.33rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .embed-container {
+                flex: 1;
+            }
+        }
+
+        .register-container {
+            grid-area: register-container;
+
+            .register-before {
+                text-align: center;
+                color: @dark-grey;
+                font-size: 1.125rem;
+                margin-top: 1rem;
+
+                .gradient-text {
+                    .text-gradient();
+                }
+            }
+        }
+    }
+}

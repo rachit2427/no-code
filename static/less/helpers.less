@@ -1,0 +1,19 @@
+.no-margin-padding () {
+    margin: 0;
+    padding: 0;
+}
+
+.text-gradient(@color1: @gradient-green, @color2: @gradient-blue, @angle: 45deg) {
+    background: @color1;
+    background: linear-gradient(@angle, @color1, @color2);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+
+.strike-through {
+    text-decoration: line-through;
+}

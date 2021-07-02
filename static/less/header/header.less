@@ -1,0 +1,33 @@
+header {
+    position: sticky;
+    top: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    z-index: 1;
+
+    .animated-stripe {
+        height: 5px;
+        .background-gradient-animated();
+    }
+
+    .header-container {
+        background-color: @theme-blue;
+        color: @white;
+        padding: 1.25rem;
+        box-shadow: 0 2px 4px 4px rgba(88, 103, 210, 0.2);
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+
+            .left-side {
+                display: flex;
+                align-items: center;
+            }
+            .right-side {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
